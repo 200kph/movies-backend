@@ -10,11 +10,26 @@ export class MoviesController {
         private readonly moviesService: MoviesService,
     ) { }
 
+    /**
+     * @api {get} /movies Get all movies
+     * @apiName GetMovies
+     * @apiGroup Movies
+     */
     @Get()
     async getAllMovies() {
         return await this.moviesService.getMovies()
     }
 
+    /**
+     * @api {post} /movies Create new movie in db
+     * @apiName CreateMovie
+     * @apiGroup Movies
+     *
+     * @apiParam {Number} id Users unique ID.
+     *
+     * @apiSuccess {String} firstname Firstname of the User.
+     * @apiSuccess {String} lastname  Lastname of the User.
+     */
     @Post()
     async createMovie(@Body() createMovieDTO: CreateMovieDTO) {
         return await this.moviesService.addMovie(createMovieDTO)

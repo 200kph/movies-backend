@@ -23,8 +23,6 @@ export class MoviesService {
     }
 
     async rateMovie(rateMovieDTO: RateMovieDTO) {
-        console.log(rateMovieDTO);
-
         return await this.movieModel.findByIdAndUpdate({ _id: rateMovieDTO._id }, {
             rating: rateMovieDTO.rating,
         }, { new: true });
