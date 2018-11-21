@@ -24,11 +24,7 @@ export class MoviesController {
      * @api {post} /movies Create new movie in db
      * @apiName CreateMovie
      * @apiGroup Movies
-     *
-     * @apiParam {Number} id Users unique ID.
-     *
-     * @apiSuccess {String} firstname Firstname of the User.
-     * @apiSuccess {String} lastname  Lastname of the User.
+     * TODO: add docs here
      */
     @Post()
     async createMovie(@Body() createMovieDTO: CreateMovieDTO) {
